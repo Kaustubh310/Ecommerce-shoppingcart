@@ -1,13 +1,15 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.models import User
-
+from django.contrib import messages
 def signup(request):
     if request.method=="POST":
         email=request.POST['email']
         password=request.POST['pass1']
         confirm_password=request.POST['pass2']
         if password!=confirm_password:
-             return HttpResponse("password incorrect")
+            messages.warning(request,"Password is Not Matching")
+            return render(request,'signup.html')
+            #  return HttpResponse("password incorrect")
 
         try:
             if User.objects.get(username=email):
