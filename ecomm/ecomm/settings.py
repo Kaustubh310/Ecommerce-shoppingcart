@@ -117,6 +117,15 @@ USE_I18N = True
 
 USE_TZ = True
 
+#sending Emails 
+
+EMAIL_HOST = 'smtpout.secureserver.net'
+EMAIL_HOST_USER = 'kau.ban.rt21@dypatil.edu'
+EMAIL_HOST_PASSWORD='SSmart@999'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
