@@ -124,7 +124,7 @@ EMAIL_HOST_USER = 'kau.ban.rt21@dypatil.edu'
 EMAIL_HOST_PASSWORD='SSmart@999'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
 # Static files (CSS, JavaScript, Images)

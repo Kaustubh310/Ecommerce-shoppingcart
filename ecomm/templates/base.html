@@ -48,13 +48,25 @@
           <li><a href="/blog">Blog</a></li>
           <li><a href="/order">Orders</a></li>
           <li><a href="/profile">My Profile</a></li>
-          <li class="dropdown"><a href=""><span>SignIn</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="/auth/signup">Sign Up</a></li>
-              <li><a href="/auth/login">Login</a></li>
-              <li><a href="/auth/logout">LogOut</a></li>
-            </ul>
-          </li>
+         
+         {% if request.user.is_authenticated %}
+         <li><a href="/auth/logout">LogOut
+
+          {% comment %} {{user.username}} {% endcomment %}
+         </a></li>
+         {% else %}
+         <li class="dropdown"><a href=""><span>SignIn</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="/auth/signup">Sign Up</a></li>
+            <li><a href="/auth/login">Login</a></li>
+            
+          </ul>
+        </li>
+         {% endif %}
+          
+
+
+
           <li><a href="/cart" class="nav-link scrollto bg-danger p-3 m-2">Cart</a></li>
           <li><a href="/contact" class="nav-link scrollto bg-dark p-3 m-2">Contact</a></li>
         </ul>
