@@ -75,15 +75,15 @@ def handlelogin(request):
         if myuser is not None:
             login(request,myuser)
             messages.success(request,"Login Success")
-            return render(request,'index.html')
+            return render(request,"index.html")
         
         else:
             messages.error(request,"Invalid Credentials")
-            return redirect('/')
+            return redirect('/auth/login')
         
     return render(request,"login.html")
 
 def handlelogout(request):
     logout(request)
-    messages.success(request,"Logged out successfully")
+    messages.info(request,"Logged out successfully")
     return redirect('/auth/login')   
